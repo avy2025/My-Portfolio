@@ -1,1 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
 
+:root {
+    --bg-color: #0f172a;
+    --bg-gradient: radial-gradient(circle at top right, #1e293b, #0f172a);
+    --accent-color: #22c55e;
+    --accent-glow: rgba(34, 197, 94, 0.3);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg-color);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Background Glows */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at 10% 20%, rgba(34, 197, 94, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(34, 197, 94, 0.05) 0%, transparent 40%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Layout */
+section {
+    min-height: 100vh;
+    padding: 100px 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    opacity: 0; /* Hidden initially for GSAP reveal */
+    transform: translateY(30px);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+.highlight {
+    color: var(--accent-color);
+    text-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* Avatar System */
+#avatar-container {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 250px;
+    height: 350px;
+    z-index: 1000;
+    pointer-events: none;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    will-change: transform, opacity;
+}
+
+#avatar-container img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Hero Section */
+.hero-tagline {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+/* Cards (Glassmorphism) */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    padding: 30px;
+    border-radius: 20px;
+    transition: all var(--transition-speed);
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
+                0 0 20px var(--accent-glow);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.card p {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-tag {
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--accent-color);
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.skill-item {
+    text-align: center;
+    padding: 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 15px;
+    transition: var(--transition-speed);
+}
+
+.skill-item:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* Contact Links */
+.contact-links {
+    margin-top: 40px;
+    display: flex;
+    gap: 30px;
+}
+
+.contact-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color var(--transition-speed);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-link:hover {
+    color: var(--accent-color);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    #avatar-container {
+        width: 200px;
+        height: 280px;
+        right: 20px;
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 80px 5%;
+    }
+    
+    #avatar-container {
+        width: 150px;
+        height: 220px;
+        right: 10px;
+        bottom: 10px;
+        opacity: 0.8;
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #avatar-container {
+        width: 120px;
+        height: 180px;
+        bottom: 10px;
+        right: 10px;
+    }
+}
