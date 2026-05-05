@@ -32,12 +32,14 @@ function updateAvatarImage(sectionId) {
     // Smooth transition: Fade out -> Swap -> Fade in
     gsap.to(AVATAR_IMG, {
         opacity: 0,
-        duration: 0.2,
+        duration: 0.25,
+        ease: "power2.inOut",
         onComplete: () => {
             AVATAR_IMG.src = newSrc;
             gsap.to(AVATAR_IMG, {
                 opacity: 1,
-                duration: 0.2
+                duration: 0.25,
+                ease: "power2.inOut"
             });
         }
     });
@@ -62,7 +64,7 @@ function initAnimations() {
         });
     });
 
-    // 2. Avatar Movement and State Change Logic
+    // 2. Avatar State Change Logic
     SECTIONS.forEach((id) => {
         ScrollTrigger.create({
             trigger: `#${id}`,
@@ -70,55 +72,44 @@ function initAnimations() {
             end: "bottom center",
             onEnter: () => updateAvatarImage(id),
             onEnterBack: () => updateAvatarImage(id),
-            // scrub: true is not directly applied here as state swaps are events,
-            // but the movement below handles the smooth sync
+            // Prevent multiple rapid triggers
+            fastScrollEnd: true,
+            preventOverlaps: true
         });
     });
 
     // 3. Avatar Horizontal Movement (Scrubbed)
     // Moves the avatar slightly as the user scrolls to create a "guiding" effect
+    // Limit horizontal movement to 50–80px max for a natural feel
     gsap.to(AVATAR_CONTAINER, {
         scrollTrigger: {
             trigger: "body",
             start: "top top",
             end: "bottom bottom",
-            scrub: 1 // Smoothly follow the scroll
+            scrub: 1.2 // Smoother following
         },
         x: (index, target) => {
-            // Move left and right slightly across the entire scroll
-            // This can be refined per section if needed, but a global subtle shift works well
-            return -50; // Simple shift, can be pulsed or mapped to sections
+            return -60; // Subtle consistent shift
         },
         ease: "none"
     });
     
-    // Per-section horizontal shifts for more "active" guiding
-    gsap.to(AVATAR_CONTAINER, {
-        scrollTrigger: {
-            trigger: "#about",
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true
-        },
-        x: -100, // Move left towards content during About
-        ease: "power1.inOut"
-    });
-
+    // Section-specific minor adjustments to keep it dynamic but subtle
     gsap.to(AVATAR_CONTAINER, {
         scrollTrigger: {
             trigger: "#projects",
             start: "top bottom",
             end: "bottom top",
-            scrub: true
+            scrub: 1.5
         },
-        x: 0, // Move back to original position during Projects
-        ease: "power1.inOut"
+        x: -80, // Slightly more movement in Projects but still within range
+        ease: "sine.inOut"
     });
 
     // 4. Subtle Floating/Bounce Effect (Continuous)
     gsap.to(AVATAR_CONTAINER, {
-        y: "-=15",
-        duration: 2,
+        y: -10,
+        duration: 1.2,
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut"
