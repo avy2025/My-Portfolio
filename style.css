@@ -442,6 +442,26 @@ nav {
 }
 
 /* ── PROJECTS ── */
+.category-label {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.category-label::after {
+  content: '';
+  height: 1px;
+  flex-grow: 1;
+  background: rgba(255, 255, 255, 0.05);
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
