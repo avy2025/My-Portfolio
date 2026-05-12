@@ -1,34 +1,43 @@
-# Interactive Personal Portfolio
+# Premium 3D Creator Portfolio
 
-A premium, interactive personal portfolio built with HTML, CSS, JavaScript, and GSAP. Featuring a dynamic avatar system that guides users through different sections with smooth animations and state-aware transitions.
+A high-performance personal portfolio built for **Ranjan Thakur** using modern web technologies.
 
-## ✨ Features
+## 🚀 Getting Started
 
-- **Dynamic Avatar System**: Hand-drawn avatar that changes poses (Standing, Walking, Pointing, Turning) as you scroll through different sections.
-- **GSAP Animations**: Smooth ScrollTrigger-based transitions, subtle idle floating effects, and scroll-synced movement.
-- **Premium Dark UI**: A modern dark theme using radial gradients, glassmorphism card effects, and neon "glow" interactive elements.
-- **Fully Responsive**: Optimized for Desktop, Tablet, and Mobile devices with fluid scaling and repositioned assets.
-- **Performance Optimized**: Lightweight animations using GSAP and selective hardware acceleration (`will-change`).
+Follow these steps to run the project locally:
 
-## 🚀 Tech Stack
+1.  **Install Dependencies** (if not already done):
+    ```bash
+    npm install
+    ```
 
-- **Frontend**: HTML5, CSS3, Vanilla JavaScript
-- **Animations**: [GSAP (GreenSock Animation Platform)](https://greensock.com/gsap/)
-- **Scroll Logic**: [ScrollTrigger](https://greensock.com/scrolltrigger/)
-- **Typography**: [Outfit](https://fonts.google.com/specimen/Outfit) via Google Fonts
+2.  **Start the Development Server**:
+    ```bash
+    npm run dev
+    ```
 
-## 📁 Project Structure
+3.  **View the Site**:
+    Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-- `index.html`: Main structure and section definitions.
-- `style.css`: Design system, glassmorphism, gradients, and layout.
-- `script.js`: Animation logic, ScrollTrigger setup, and avatar state management.
-- `assets/avatar/`: Transparent PNG assets for different avatar poses.
+## 🛠️ Stack
 
-## 🛠️ Performance & Best Practices
+- **Framework**: [React](https://reactjs.org/) + [Vite](https://vitejs.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/) + Custom Brand SVGs
 
-- **SEO**: Semantic HTML5 tags and meta descriptions.
-- **Responsiveness**: Mobile-first design approach with clamp-based typography.
-- **Smoothness**: Preloading of avatar assets and optimized animation durations (~0.25s).
+## 📂 Project Structure
 
----
-*Created by [NAME]*
+- `src/components`: Individual UI sections (Hero, Projects, Navbar, etc.)
+- `src/utils`: Helper functions like `cn` for cleaner Tailwind classes.
+- `public/assets`: Static assets and images.
+- `old_portfolio/`: Backup of your original HTML/CSS/JS site.
+
+## 📦 Build for Production
+
+To create a production build:
+```bash
+npm run build
+```
+The output will be in the `dist/` directory.
