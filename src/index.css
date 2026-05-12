@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap');
+
+@theme {
+  --color-background: #000F08;
+  --color-primary: #FB3640;
+  --color-text: #EAEAEA;
+  --color-text-muted: #BFC7C2;
+  --color-accent: #FB3640;
+
+  --font-grotesk: "Space Grotesk", sans-serif;
+  --font-syne: "Syne", sans-serif;
+
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+
+  @keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(251, 54, 64, 0.2); }
+    100% { box-shadow: 0 0 20px rgba(251, 54, 64, 0.6); }
+  }
+}
+
+@utility glass {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text font-grotesk selection:bg-primary/30 selection:text-primary;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-syne font-bold;
+  }
+}
+
+.glow-text {
+  text-shadow: 0 0 15px rgba(251, 54, 64, 0.4);
+}
+
+.glow-border {
+  @apply border border-primary/20 hover:border-primary/50 transition-colors duration-300;
+  box-shadow: 0 0 0 rgba(251, 54, 64, 0);
+}
+
+.glow-border:hover {
+  box-shadow: 0 0 20px rgba(251, 54, 64, 0.1);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 hover:bg-white/20 transition-colors;
+  border-radius: 10px;
+}
