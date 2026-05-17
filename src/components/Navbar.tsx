@@ -52,7 +52,9 @@ export const Navbar = () => {
               {link.name}
             </motion.a>
           ))}
-          <Button variant="primary" size="sm">Resume</Button>
+          <Button variant="primary" size="sm" href="/Ranjan_Resume.pdf" target="_blank" rel="noopener noreferrer">
+            MY CV
+          </Button>
         </div>
 
         {/* Mobile Toggle */}
@@ -84,7 +86,15 @@ export const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <Button variant="primary" className="w-full">Resume</Button>
+              <Button 
+                variant="primary" 
+                className="w-full" 
+                href="/Ranjan_Resume.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                MY CV
+              </Button>
             </div>
           </motion.div>
         )}
