@@ -2,17 +2,23 @@ import { motion } from 'framer-motion';
 import type { HTMLMotionProps } from 'framer-motion';
 import { cn } from '../utils/cn';
 
-interface ButtonProps extends HTMLMotionProps<"button"> {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'outline' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
   children: React.ReactNode;
+  href?: string;
+  target?: string;
+  rel?: string;
 }
 
 export const Button = ({ 
   variant = 'primary', 
   size = 'md', 
   children, 
-  className, 
+  className,
+  href,
+  target,
+  rel,
   ...props 
 }: ButtonProps) => {
   const baseStyles = "inline-flex items-center justify-center rounded-sm font-semibold transition-all duration-300 active:scale-95 disabled:opacity-50";
@@ -29,12 +35,29 @@ export const Button = ({
     lg: "px-10 py-4 text-lg uppercase tracking-wider"
   };
 
+  const styles = cn(baseStyles, variants[variant], sizes[size], className);
+
+  if (href) {
+    return (
+      <motion.a
+        href={href}
+        target={target}
+        rel={rel}
+        whileHover={{ y: -2 }}
+        whileTap={{ scale: 0.98 }}
+        className={styles}
+      >
+        {children}
+      </motion.a>
+    );
+  }
+
   return (
     <motion.button
       whileHover={{ y: -2 }}
       whileTap={{ scale: 0.98 }}
-      className={cn(baseStyles, variants[variant], sizes[size], className)}
-      {...props}
+      className={styles}
+      {...(props as any)}
     >
       {children}
     </motion.button>
