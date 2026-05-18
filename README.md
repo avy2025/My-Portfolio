@@ -2,6 +2,8 @@
 
 A high-performance personal portfolio built for **Ranjan Thakur** using modern web technologies.
 
+🔗 **Live Demo**: [https://agent-6a098651dd7746eceabf3195--ranjan-thakur.netlify.app/](https://agent-6a098651dd7746eceabf3195--ranjan-thakur.netlify.app/)
+
 ## 🚀 Getting Started
 
 Follow these steps to run the project locally:
