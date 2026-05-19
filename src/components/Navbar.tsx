@@ -35,7 +35,7 @@ export const Navbar = () => {
           animate={{ opacity: 1, x: 0 }}
           className="text-xl font-syne font-extrabold tracking-tighter text-white"
         >
-          WELCOME TO <span className="text-[#FB3640]">MY VERSE</span>
+          WELCOME TO <span className="text-[#BFE169]">MY VERSE</span>
         </motion.a>
 
         {/* Desktop Links */}

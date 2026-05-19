@@ -14,11 +14,11 @@ export const Hero = () => {
       <div className="absolute inset-0 z-0">
         <motion.div 
           style={{ y: y1 }}
-          className="absolute top-1/4 -left-20 w-96 h-96 bg-[#FB3640]/10 rounded-full blur-[120px]" 
+          className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" 
         />
         <motion.div 
           style={{ y: y2 }}
-          className="absolute bottom-1/4 -right-20 w-[500px] h-[500px] bg-[#FB3640]/5 rounded-full blur-[150px]" 
+          className="absolute bottom-1/4 -right-20 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px]" 
         />
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none" />
       </div>
@@ -34,7 +34,7 @@ export const Hero = () => {
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-text-muted">Available for new projects</span>
           </div>
 
-          <h2 className="text-xl md:text-2xl font-syne font-bold text-[#FB3640] mb-4 uppercase tracking-widest">
+          <h2 className="text-xl md:text-2xl font-syne font-bold text-primary mb-4 uppercase tracking-widest">
             HI, I'M
           </h2>
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-syne font-extrabold text-white leading-[0.9] mb-8 tracking-tighter">
@@ -70,7 +70,7 @@ export const Hero = () => {
             <img 
               src="/assets/avatar/avatar_main.png" 
               alt="Ranjan Thakur"
-              className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(251,54,64,0.3)] transition-transform duration-700 hover:scale-105"
+              className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(191,225,105,0.3)] transition-transform duration-700 hover:scale-105"
             />
             {/* 3D Glass Card behind avatar */}
             <div className="absolute -inset-10 glass -z-10 rounded-[4rem] rotate-3 opacity-50" />
@@ -83,7 +83,7 @@ export const Hero = () => {
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             className="absolute top-10 -left-10 glass p-4 rounded-xl shadow-2xl z-20"
           >
-            <div className="text-[#FB3640] font-syne font-bold text-2xl">AI/ML</div>
+            <div className="text-primary font-syne font-bold text-2xl">AI/ML</div>
           </motion.div>
 
           {/* Floating Element 2 */}
