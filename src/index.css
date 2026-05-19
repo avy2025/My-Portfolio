@@ -3,11 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap');
 
 @theme {
-  --color-background: #000F08;
-  --color-primary: #FB3640;
+  --color-background: #080209;
+  --color-primary: #BFE169;
   --color-text: #EAEAEA;
   --color-text-muted: #BFC7C2;
-  --color-accent: #FB3640;
+  --color-accent: #BFE169;
 
   --font-grotesk: "Space Grotesk", sans-serif;
   --font-syne: "Syne", sans-serif;
@@ -15,8 +15,8 @@
   --animate-glow: glow 2s ease-in-out infinite alternate;
 
   @keyframes glow {
-    0% { box-shadow: 0 0 5px rgba(251, 54, 64, 0.2); }
-    100% { box-shadow: 0 0 20px rgba(251, 54, 64, 0.6); }
+    0% { box-shadow: 0 0 5px rgba(191, 225, 105, 0.2); }
+    100% { box-shadow: 0 0 20px rgba(191, 225, 105, 0.6); }
   }
 }
 
@@ -39,16 +39,16 @@
 }
 
 .glow-text {
-  text-shadow: 0 0 15px rgba(251, 54, 64, 0.4);
+  text-shadow: 0 0 15px rgba(191, 225, 105, 0.4);
 }
 
 .glow-border {
   @apply border border-primary/20 hover:border-primary/50 transition-colors duration-300;
-  box-shadow: 0 0 0 rgba(251, 54, 64, 0);
+  box-shadow: 0 0 0 rgba(191, 225, 105, 0);
 }
 
 .glow-border:hover {
-  box-shadow: 0 0 20px rgba(251, 54, 64, 0.1);
+  box-shadow: 0 0 20px rgba(191, 225, 105, 0.1);
 }
 
 * {

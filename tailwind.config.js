@@ -7,13 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#000F08",
-        primary: "#FB3640",
+        background: "#080209",
+        primary: "#BFE169",
         text: {
           DEFAULT: "#EAEAEA",
           muted: "#BFC7C2",
         },
-        accent: "#FB3640",
+        accent: "#BFE169",
       },
       fontFamily: {
         grotesk: ["'Space Grotesk'", "sans-serif"],
@@ -24,8 +24,8 @@ export default {
       },
       keyframes: {
         glow: {
-          '0%': { boxShadow: '0 0 5px rgba(251, 54, 64, 0.2)' },
-          '100%': { boxShadow: '0 0 20px rgba(251, 54, 64, 0.6)' },
+          '0%': { boxShadow: '0 0 5px rgba(191, 225, 105, 0.2)' },
+          '100%': { boxShadow: '0 0 20px rgba(191, 225, 105, 0.6)' },
         }
       }
     },
