@@ -23,9 +23,9 @@ export const Marquee = () => {
           {[...skills, ...skills].map((skill, i) => (
             <div 
               key={i} 
-              className="text-4xl md:text-6xl font-syne font-extrabold text-white/10 hover:text-[#FB3640]/40 transition-colors cursor-default uppercase tracking-tighter"
+              className="text-4xl md:text-6xl font-syne font-extrabold text-white/10 hover:text-primary/40 transition-colors cursor-default uppercase tracking-tighter"
             >
-              {skill} <span className="text-[#FB3640] ml-12">/</span>
+              {skill} <span className="text-primary ml-12">/</span>
             </div>
           ))}
         </motion.div>

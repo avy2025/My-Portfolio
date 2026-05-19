@@ -24,8 +24,8 @@ export const Button = ({
   const baseStyles = "inline-flex items-center justify-center rounded-sm font-semibold transition-all duration-300 active:scale-95 disabled:opacity-50";
   
   const variants = {
-    primary: "bg-[#FB3640] text-white hover:bg-[#d12d36] shadow-[0_0_15px_rgba(251,54,64,0.3)] hover:shadow-[0_0_25px_rgba(251,54,64,0.5)]",
-    outline: "border-2 border-[#FB3640] text-[#FB3640] hover:bg-[#FB3640] hover:text-white",
+    primary: "bg-primary text-[#080209] hover:brightness-105 shadow-[0_0_15px_rgba(191,225,105,0.3)] hover:shadow-[0_0_25px_rgba(191,225,105,0.5)]",
+    outline: "border-2 border-primary text-primary hover:bg-primary hover:text-[#080209]",
     ghost: "text-[#EAEAEA] hover:bg-white/10"
   };
 

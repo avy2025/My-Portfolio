@@ -29,7 +29,7 @@ export const Skills = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             className="text-5xl md:text-7xl font-syne font-extrabold text-white mb-6 uppercase"
           >
-            Core <span className="text-[#FB3640]">Skills</span>
+            Core <span className="text-primary">Skills</span>
           </motion.h2>
           <p className="text-text-muted text-xl max-w-2xl mx-auto font-medium">
             Technical expertise in AI/ML and Software Engineering
@@ -46,7 +46,7 @@ export const Skills = () => {
               whileHover={{ y: -10 }}
               className="glass p-10 rounded-[2rem] border-white/5 hover:border-primary/30 transition-all duration-500 group"
             >
-              <div className="mb-8 text-[#FB3640] p-4 bg-[#FB3640]/10 rounded-2xl w-fit group-hover:scale-110 transition-transform">
+              <div className="mb-8 text-primary p-4 bg-primary/10 rounded-2xl w-fit group-hover:scale-110 transition-transform">
                 {category.icon}
               </div>
               <h3 className="text-2xl font-syne font-bold text-white mb-8">
