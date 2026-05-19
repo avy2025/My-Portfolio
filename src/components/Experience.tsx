@@ -24,7 +24,7 @@ export const Experience = () => {
             className="text-5xl md:text-7xl font-syne font-extrabold text-white mb-6"
           >
             EXPERIENCE <br />
-            <span className="text-[#FB3640]">& LEADERSHIP</span>
+            <span className="text-primary">& LEADERSHIP</span>
           </motion.h2>
           <p className="text-text-muted text-xl max-w-2xl font-medium">
             Academic journey and professional contributions

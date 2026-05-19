@@ -101,7 +101,7 @@ export const Projects = () => {
             className="text-5xl md:text-8xl font-syne font-extrabold text-white mb-6 uppercase tracking-tighter"
           >
             FEATURED <br />
-            <span className="text-[#FB3640]">PROJECTS</span>
+            <span className="text-primary">PROJECTS</span>
           </motion.h2>
           <p className="text-text-muted text-xl max-w-2xl font-medium">
             Categorized collection of my technical work across AI, Web, and Systems.
