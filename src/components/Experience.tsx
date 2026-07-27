@@ -3,6 +3,11 @@ import { motion } from 'framer-motion';
 export const Experience = () => {
   const experiences = [
     {
+      date: "June 15, 2026 - Sept 15, 2026",
+      title: "AI Intern @ SDN TECH SOLUTION",
+      description: "Working as an AI Intern utilizing artificial intelligence technologies."
+    },
+    {
       date: "2023 - Present",
       title: "President @ ACE-DTC",
       description: "Leading the official technical society of Delhi Technical Campus. Organizing national-level hackathons, tech workshops, and community-building initiatives for 500+ students."
